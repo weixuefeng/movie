@@ -1,0 +1,123 @@
+#siteNav > div {
+  @apply backdrop-blur-md backdrop-filter bg-opacity-10 bg-white;
+  font-family: 'Orbitron', sans-serif;
+  // font-family: 'Creepster', cursive;
+  > div {
+    @apply max-w-full mx-auto px-4 sm:px-6 lg:px-8;
+    > div {
+      @apply h-16 flex items-center justify-between;
+    }
+  }
+}
+
+#siteLogo {
+  @apply hidden lg:flex lg:items-center;
+  span {
+    @apply sr-only;
+  }
+  img {
+    @apply h-8 w-auto;
+  }
+}
+
+.navigation-container {
+  @apply hidden lg:flex flex-row justify-center items-center max-w-full;
+  .navigation {
+    @apply flex flex-row;
+    .item {
+      @apply px-5;
+    }
+  }
+}
+
+#siteNav .mobileMenuBtn {
+  @apply flex-1 flex items-center lg:hidden;
+  button {
+    @apply -ml-2 p-2 text-black;
+    svg {
+      @apply h-6 w-6;
+    }
+  }
+}
+
+#siteNav .mobileMenuLogo {
+  @apply lg:hidden;
+  img {
+    @apply h-8 w-auto;
+  }
+}
+
+#siteNav .mobileMenuMore {
+  @apply flex-1 flex items-center justify-end;
+  img {
+    @apply h-8 w-auto;
+  }
+}
+
+// Mobile Menu
+.mobileMenu {
+  @apply fixed inset-0 flex z-50 lg:hidden;
+  .menu {
+    @apply relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto;
+  }
+  .closeBtn {
+    @apply px-4 pt-5 pb-2 flex;
+    button {
+      @apply -m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400;
+      span {
+        @apply sr-only;
+      }
+      svg {
+        @apply h-6 w-6;
+      }
+    }
+  }
+  .pages {
+    @apply border-t border-gray-200 py-6 px-4 space-y-6;
+    > div {
+      @apply flow-root;
+      a {
+        @apply -m-2 p-2 block font-medium text-gray-900;
+      }
+    }
+  }
+  .tabs {
+    @apply mt-2;
+    .list {
+      @apply -mb-px flex px-4 space-x-8;
+      .tab {
+        @apply flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium text-gray-900 bg-gray-50 rounded-lg border-transparent;
+        &.selected {
+          @apply bg-gray-200;
+        }
+      }
+    }
+    .panel {
+      @apply px-4 py-4 space-y-6;
+      > div {
+        @apply grid grid-cols-2 gap-x-4 gap-y-10;
+        .group {
+          @apply relative hover:opacity-75;
+          > div {
+            @apply aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden;
+          }
+          img {
+            @apply object-center object-cover;
+          }
+          a {
+            @apply mt-2 block text-sm font-medium text-gray-900 text-center;
+            span {
+              @apply absolute z-50 inset-0;
+            }
+          }
+        }
+      }
+      .more {
+        @apply w-full block;
+        a {
+          @apply w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 bg-gray-50 hover:bg-gray-100 sm:w-auto text-center;
+        }
+      }
+    }
+  }
+}
